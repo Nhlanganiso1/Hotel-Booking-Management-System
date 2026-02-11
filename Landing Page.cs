@@ -24,5 +24,38 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             j.Show();
             this.Hide();
         }
+
+        public void ConfigureMenuStripForRole(string role)
+        {
+            ////rest all menu items to be invisible by default
+            //foreach (ToolStripItem item in menuStrip1.Items) item.Visible = false;
+
+            switch (role)
+            {
+                case "Manager":
+                    // login for manager
+                    menuStrip1.Items["mAToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["rEPORTSToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["mANAGECLIENTDETAILSToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["BOOKINGSToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["cHECKINCHECKOUTToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["cLEANINGToolStripMenuItem"].Visible = true;
+                    break;
+                case "Receptionist":
+                    // login for receptionist
+                    menuStrip1.Items["mANAGECLIENTDETAILSToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["BOOKINGSToolStripMenuItem"].Visible = true;
+                    menuStrip1.Items["cHECKINCHECKOUTToolStripMenuItem"].Visible = true;
+                    break;
+                case "Cleaner":
+                    // login for cleaner
+                    menuStrip1.Items["cLEANINGToolStripMenuItem"].Visible = true;
+                    break;
+                default:
+                    // role not recognized, show error message
+                    MessageBox.Show("An error occurred, user role not recognized.");
+                    return;
+            }
+        }
     }
 }

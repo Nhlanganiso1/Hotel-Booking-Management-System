@@ -32,7 +32,10 @@
             this.mAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEPORTSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGECLIENTDETAILSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lOGOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BOOKINGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHECKINCHECKOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLEANINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lOGOUTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,7 +45,10 @@
             this.mAToolStripMenuItem,
             this.rEPORTSToolStripMenuItem,
             this.mANAGECLIENTDETAILSToolStripMenuItem,
-            this.lOGOUTToolStripMenuItem});
+            this.BOOKINGSToolStripMenuItem,
+            this.cHECKINCHECKOUTToolStripMenuItem,
+            this.cLEANINGToolStripMenuItem,
+            this.lOGOUTToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(855, 24);
@@ -54,6 +60,7 @@
             this.mAToolStripMenuItem.Name = "mAToolStripMenuItem";
             this.mAToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
             this.mAToolStripMenuItem.Text = "MANAGE ROOM";
+            this.mAToolStripMenuItem.Visible = false;
             this.mAToolStripMenuItem.Click += new System.EventHandler(this.mAToolStripMenuItem_Click);
             // 
             // rEPORTSToolStripMenuItem
@@ -61,18 +68,41 @@
             this.rEPORTSToolStripMenuItem.Name = "rEPORTSToolStripMenuItem";
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
+            this.rEPORTSToolStripMenuItem.Visible = false;
             // 
             // mANAGECLIENTDETAILSToolStripMenuItem
             // 
             this.mANAGECLIENTDETAILSToolStripMenuItem.Name = "mANAGECLIENTDETAILSToolStripMenuItem";
             this.mANAGECLIENTDETAILSToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
             this.mANAGECLIENTDETAILSToolStripMenuItem.Text = "MANAGE CLIENT DETAILS";
+            this.mANAGECLIENTDETAILSToolStripMenuItem.Visible = false;
             // 
-            // lOGOUTToolStripMenuItem
+            // BOOKINGSToolStripMenuItem
             // 
-            this.lOGOUTToolStripMenuItem.Name = "lOGOUTToolStripMenuItem";
-            this.lOGOUTToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.lOGOUTToolStripMenuItem.Text = "LOGOUT";
+            this.BOOKINGSToolStripMenuItem.Name = "BOOKINGSToolStripMenuItem";
+            this.BOOKINGSToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.BOOKINGSToolStripMenuItem.Text = "BOOKINGS";
+            this.BOOKINGSToolStripMenuItem.Visible = false;
+            // 
+            // cHECKINCHECKOUTToolStripMenuItem
+            // 
+            this.cHECKINCHECKOUTToolStripMenuItem.Name = "cHECKINCHECKOUTToolStripMenuItem";
+            this.cHECKINCHECKOUTToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
+            this.cHECKINCHECKOUTToolStripMenuItem.Text = "CHECK-IN/CHECK-OUT";
+            this.cHECKINCHECKOUTToolStripMenuItem.Visible = false;
+            // 
+            // cLEANINGToolStripMenuItem
+            // 
+            this.cLEANINGToolStripMenuItem.Name = "cLEANINGToolStripMenuItem";
+            this.cLEANINGToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.cLEANINGToolStripMenuItem.Text = "CLEANING";
+            this.cLEANINGToolStripMenuItem.Visible = false;
+            // 
+            // lOGOUTToolStripMenuItem1
+            // 
+            this.lOGOUTToolStripMenuItem1.Name = "lOGOUTToolStripMenuItem1";
+            this.lOGOUTToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
+            this.lOGOUTToolStripMenuItem1.Text = "LOGOUT";
             // 
             // LandingPage
             // 
@@ -99,6 +129,9 @@
         private System.Windows.Forms.ToolStripMenuItem mAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEPORTSToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGECLIENTDETAILSToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem BOOKINGSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cHECKINCHECKOUTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLEANINGToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem1;
     }
 }
