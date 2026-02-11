@@ -54,10 +54,42 @@
     <Compile Include="Login Page.Designer.cs">
       <DependentUpon>Login Page.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Pages\Manage Room.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Pages\Manage Room.Designer.cs">
+      <DependentUpon>Manage Room.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Landing Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Landing Page.Designer.cs">
+      <DependentUpon>Landing Page.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="The_Luxe_ServerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>The_Luxe_ServerDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login Page.resx">
       <DependentUpon>Login Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Pages\Manage Room.resx">
+      <DependentUpon>Manage Room.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Landing Page.resx">
+      <DependentUpon>Landing Page.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -77,14 +110,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="The_Luxe_ServerDataSet.xsc">
+      <DependentUpon>The_Luxe_ServerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="The_Luxe_ServerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>The_Luxe_ServerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="The_Luxe_ServerDataSet.xss">
+      <DependentUpon>The_Luxe_ServerDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Cleaner Pages\" />
-    <Folder Include="Manager Pages\" />
     <Folder Include="Receptionist Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\Login background.png" />
+    <None Include="Resources\Login background 2.png" />
+    <None Include="Resources\Login background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
