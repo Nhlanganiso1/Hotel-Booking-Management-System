@@ -19,7 +19,6 @@ namespace Hotel_Booking_Management_System
             
         }
 
-
         //checks that login details are valid, if the user id is not a valid integer, return -1 to indicate an error
         private int validateLogin()
         {
@@ -35,7 +34,6 @@ namespace Hotel_Booking_Management_System
 
             return userID;
         }
-
 
         // event handler for the login button, validates the login details and checks the database for a matching user, if a match is found, opens the landing page for the user and shows the appropriate menu items based on their role
         private void button1_Click(object sender, EventArgs e)
@@ -67,17 +65,15 @@ namespace Hotel_Booking_Management_System
             f1.ConfigureMenuStripForRole(role);
             f1.Show();
             this.Hide();
+            
         }
 
-
-        
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'the_Luxe_ServerDataSet.Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.the_Luxe_ServerDataSet.Employee);
 
         }
-
       
     }
 }

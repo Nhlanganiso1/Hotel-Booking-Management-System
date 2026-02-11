@@ -60,7 +60,6 @@
             this.label1.Size = new System.Drawing.Size(90, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Name";
-           
             // 
             // label2
             // 
@@ -89,9 +88,9 @@
             this.panel1.Controls.Add(this.PasswordTxb);
             this.panel1.Controls.Add(this.UserNameTxb);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(257, 131);
+            this.panel1.Location = new System.Drawing.Point(294, 128);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(395, 216);
+            this.panel1.Size = new System.Drawing.Size(385, 215);
             this.panel1.TabIndex = 4;
             // 
             // button1
@@ -131,7 +130,6 @@
             this.ClientSize = new System.Drawing.Size(901, 489);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;
-            this.IsMdiContainer = true;
             this.Name = "LoginForm";
             this.Text = "THE LUXE RESIDENCES";
             this.Load += new System.EventHandler(this.LoginForm_Load);
