@@ -113,6 +113,7 @@
             this.ClientSize = new System.Drawing.Size(855, 488);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "LandingPage";
             this.Text = "THE LUXE RESIDENCES";

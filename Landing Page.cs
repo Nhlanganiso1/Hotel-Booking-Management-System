@@ -17,12 +17,23 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             InitializeComponent();
         }
 
+        public void FormSetup(Form myForm)
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+
+            myForm.MdiParent = this;
+            myForm.WindowState = FormWindowState.Maximized;
+            myForm.Show();
+        }
+
         private void mAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //link it to the Manage room page
             Manage_Room j = new Manage_Room();
-            j.Show();
-            this.Hide();
+            FormSetup(j);
         }
 
         public void ConfigureMenuStripForRole(string role)
