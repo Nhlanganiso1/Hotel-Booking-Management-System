@@ -36,6 +36,7 @@
             this.cHECKINCHECKOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLEANINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eMPLOYEEDETAILSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@
             this.BOOKINGSToolStripMenuItem,
             this.cHECKINCHECKOUTToolStripMenuItem,
             this.cLEANINGToolStripMenuItem,
-            this.lOGOUTToolStripMenuItem1});
+            this.lOGOUTToolStripMenuItem1,
+            this.eMPLOYEEDETAILSToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(855, 24);
@@ -69,6 +71,7 @@
             this.rEPORTSToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.rEPORTSToolStripMenuItem.Text = "REPORTS";
             this.rEPORTSToolStripMenuItem.Visible = false;
+            this.rEPORTSToolStripMenuItem.Click += new System.EventHandler(this.rEPORTSToolStripMenuItem_Click);
             // 
             // mANAGECLIENTDETAILSToolStripMenuItem
             // 
@@ -76,6 +79,7 @@
             this.mANAGECLIENTDETAILSToolStripMenuItem.Size = new System.Drawing.Size(157, 20);
             this.mANAGECLIENTDETAILSToolStripMenuItem.Text = "MANAGE CLIENT DETAILS";
             this.mANAGECLIENTDETAILSToolStripMenuItem.Visible = false;
+            this.mANAGECLIENTDETAILSToolStripMenuItem.Click += new System.EventHandler(this.mANAGECLIENTDETAILSToolStripMenuItem_Click);
             // 
             // BOOKINGSToolStripMenuItem
             // 
@@ -83,6 +87,7 @@
             this.BOOKINGSToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.BOOKINGSToolStripMenuItem.Text = "BOOKINGS";
             this.BOOKINGSToolStripMenuItem.Visible = false;
+            this.BOOKINGSToolStripMenuItem.Click += new System.EventHandler(this.BOOKINGSToolStripMenuItem_Click);
             // 
             // cHECKINCHECKOUTToolStripMenuItem
             // 
@@ -90,6 +95,7 @@
             this.cHECKINCHECKOUTToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
             this.cHECKINCHECKOUTToolStripMenuItem.Text = "CHECK-IN/CHECK-OUT";
             this.cHECKINCHECKOUTToolStripMenuItem.Visible = false;
+            this.cHECKINCHECKOUTToolStripMenuItem.Click += new System.EventHandler(this.cHECKINCHECKOUTToolStripMenuItem_Click);
             // 
             // cLEANINGToolStripMenuItem
             // 
@@ -97,12 +103,21 @@
             this.cLEANINGToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.cLEANINGToolStripMenuItem.Text = "CLEANING";
             this.cLEANINGToolStripMenuItem.Visible = false;
+            this.cLEANINGToolStripMenuItem.Click += new System.EventHandler(this.cLEANINGToolStripMenuItem_Click);
             // 
             // lOGOUTToolStripMenuItem1
             // 
             this.lOGOUTToolStripMenuItem1.Name = "lOGOUTToolStripMenuItem1";
             this.lOGOUTToolStripMenuItem1.Size = new System.Drawing.Size(66, 20);
             this.lOGOUTToolStripMenuItem1.Text = "LOGOUT";
+            // 
+            // eMPLOYEEDETAILSToolStripMenuItem
+            // 
+            this.eMPLOYEEDETAILSToolStripMenuItem.Name = "eMPLOYEEDETAILSToolStripMenuItem";
+            this.eMPLOYEEDETAILSToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
+            this.eMPLOYEEDETAILSToolStripMenuItem.Text = "EMPLOYEE DETAILS";
+            this.eMPLOYEEDETAILSToolStripMenuItem.Visible = false;
+            this.eMPLOYEEDETAILSToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEDETAILSToolStripMenuItem_Click);
             // 
             // LandingPage
             // 
@@ -134,5 +149,6 @@
         private System.Windows.Forms.ToolStripMenuItem cHECKINCHECKOUTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cLEANINGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem eMPLOYEEDETAILSToolStripMenuItem;
     }
 }
