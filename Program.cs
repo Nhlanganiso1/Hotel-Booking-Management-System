@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Hotel_Booking_Management_System.Receptionist_Pages;
 
 namespace Hotel_Booking_Management_System
 {
@@ -16,7 +17,7 @@ namespace Hotel_Booking_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            Application.Run(new Bookings());
         }
     }
 }
