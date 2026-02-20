@@ -34,9 +34,14 @@
             this.mANAGECLIENTDETAILSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BOOKINGSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cHECKINCHECKOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHECKINToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHECKOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLEANINGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOGOUTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.eMPLOYEEDETAILSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEMOVEEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uPDATEEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,11 +96,26 @@
             // 
             // cHECKINCHECKOUTToolStripMenuItem
             // 
+            this.cHECKINCHECKOUTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cHECKINToolStripMenuItem,
+            this.cHECKOUTToolStripMenuItem});
             this.cHECKINCHECKOUTToolStripMenuItem.Name = "cHECKINCHECKOUTToolStripMenuItem";
             this.cHECKINCHECKOUTToolStripMenuItem.Size = new System.Drawing.Size(146, 20);
             this.cHECKINCHECKOUTToolStripMenuItem.Text = "CHECK-IN/CHECK-OUT";
             this.cHECKINCHECKOUTToolStripMenuItem.Visible = false;
             this.cHECKINCHECKOUTToolStripMenuItem.Click += new System.EventHandler(this.cHECKINCHECKOUTToolStripMenuItem_Click);
+            // 
+            // cHECKINToolStripMenuItem
+            // 
+            this.cHECKINToolStripMenuItem.Name = "cHECKINToolStripMenuItem";
+            this.cHECKINToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.cHECKINToolStripMenuItem.Text = "CHECK-IN";
+            // 
+            // cHECKOUTToolStripMenuItem
+            // 
+            this.cHECKOUTToolStripMenuItem.Name = "cHECKOUTToolStripMenuItem";
+            this.cHECKOUTToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.cHECKOUTToolStripMenuItem.Text = "CHECK-OUT";
             // 
             // cLEANINGToolStripMenuItem
             // 
@@ -113,11 +133,36 @@
             // 
             // eMPLOYEEDETAILSToolStripMenuItem
             // 
+            this.eMPLOYEEDETAILSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDEMPLOYEEToolStripMenuItem,
+            this.rEMOVEEMPLOYEEToolStripMenuItem,
+            this.uPDATEEMPLOYEEToolStripMenuItem});
             this.eMPLOYEEDETAILSToolStripMenuItem.Name = "eMPLOYEEDETAILSToolStripMenuItem";
             this.eMPLOYEEDETAILSToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.eMPLOYEEDETAILSToolStripMenuItem.Text = "EMPLOYEE DETAILS";
             this.eMPLOYEEDETAILSToolStripMenuItem.Visible = false;
             this.eMPLOYEEDETAILSToolStripMenuItem.Click += new System.EventHandler(this.eMPLOYEEDETAILSToolStripMenuItem_Click);
+            // 
+            // aDDEMPLOYEEToolStripMenuItem
+            // 
+            this.aDDEMPLOYEEToolStripMenuItem.Name = "aDDEMPLOYEEToolStripMenuItem";
+            this.aDDEMPLOYEEToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.aDDEMPLOYEEToolStripMenuItem.Text = "ADD EMPLOYEE";
+            this.aDDEMPLOYEEToolStripMenuItem.Click += new System.EventHandler(this.aDDEMPLOYEEToolStripMenuItem_Click);
+            // 
+            // rEMOVEEMPLOYEEToolStripMenuItem
+            // 
+            this.rEMOVEEMPLOYEEToolStripMenuItem.Name = "rEMOVEEMPLOYEEToolStripMenuItem";
+            this.rEMOVEEMPLOYEEToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.rEMOVEEMPLOYEEToolStripMenuItem.Text = "REMOVE EMPLOYEE";
+            this.rEMOVEEMPLOYEEToolStripMenuItem.Click += new System.EventHandler(this.rEMOVEEMPLOYEEToolStripMenuItem_Click);
+            // 
+            // uPDATEEMPLOYEEToolStripMenuItem
+            // 
+            this.uPDATEEMPLOYEEToolStripMenuItem.Name = "uPDATEEMPLOYEEToolStripMenuItem";
+            this.uPDATEEMPLOYEEToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.uPDATEEMPLOYEEToolStripMenuItem.Text = "UPDATE EMPLOYEE";
+            this.uPDATEEMPLOYEEToolStripMenuItem.Click += new System.EventHandler(this.uPDATEEMPLOYEEToolStripMenuItem_Click);
             // 
             // LandingPage
             // 
@@ -150,5 +195,10 @@
         private System.Windows.Forms.ToolStripMenuItem cLEANINGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOGOUTToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem eMPLOYEEDETAILSToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cHECKINToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cHECKOUTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDDEMPLOYEEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEMOVEEMPLOYEEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uPDATEEMPLOYEEToolStripMenuItem;
     }
 }

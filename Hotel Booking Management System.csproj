@@ -78,17 +78,29 @@
     <Compile Include="Landing Page.Designer.cs">
       <DependentUpon>Landing Page.cs</DependentUpon>
     </Compile>
-    <Compile Include="Manager Pages\ManageEmployee.cs">
+    <Compile Include="Manager Pages\AddEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Manager Pages\ManageEmployee.Designer.cs">
-      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    <Compile Include="Manager Pages\AddEmployee.Designer.cs">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Manager Pages\ManagerReports.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manager Pages\ManagerReports.Designer.cs">
       <DependentUpon>ManagerReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Pages\RemoveEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Pages\RemoveEmployee.Designer.cs">
+      <DependentUpon>RemoveEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Pages\UpdateEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Pages\UpdateEmployee.Designer.cs">
+      <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,11 +148,17 @@
     <EmbeddedResource Include="Landing Page.resx">
       <DependentUpon>Landing Page.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Manager Pages\ManageEmployee.resx">
-      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Manager Pages\AddEmployee.resx">
+      <DependentUpon>AddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager Pages\ManagerReports.resx">
       <DependentUpon>ManagerReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Pages\RemoveEmployee.resx">
+      <DependentUpon>RemoveEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Pages\UpdateEmployee.resx">
+      <DependentUpon>UpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

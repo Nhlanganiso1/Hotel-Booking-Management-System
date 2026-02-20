@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hotel_Booking_Management_System.Manager_Pages
 {
-    public partial class ManageEmployee : Form
+    public partial class RemoveEmployee : Form
     {
-        public ManageEmployee()
+        public RemoveEmployee()
         {
             InitializeComponent();
         }

@@ -94,8 +94,9 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 
         private void eMPLOYEEDETAILSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageEmployee employeePage = new ManageEmployee();
-            FormSetup(employeePage);
+
+
+            
         }
 
         private void mANAGECLIENTDETAILSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -122,6 +123,24 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         {
             CleanerPage cleanerPage = new CleanerPage();
             FormSetup(cleanerPage);
+        }
+
+        private void aDDEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddEmployee addEmployeePage = new AddEmployee();
+            FormSetup(addEmployeePage);
+        }
+
+        private void rEMOVEEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveEmployee removeEmployeePage = new RemoveEmployee();
+            FormSetup(removeEmployeePage);
+        }
+
+        private void uPDATEEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UpdateEmployee updateEmployeePage = new UpdateEmployee();
+            FormSetup(updateEmployeePage);
         }
     }
 }
