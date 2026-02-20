@@ -54,6 +54,7 @@
     <Compile Include="Cleaner Pages\CleanerPage.Designer.cs">
       <DependentUpon>CleanerPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="Login Page.cs">
       <SubType>Form</SubType>
     </Compile>

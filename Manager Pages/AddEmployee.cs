@@ -13,15 +13,17 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 {
     public partial class AddEmployee : Form
     {
-        public AddEmployee()
+        int hotelID;
+        public AddEmployee(CurrentUser currentUser)
         {
             InitializeComponent();
+            hotelID = currentUser.UserHotelId;
         }
 
         private void AddEmployee_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'the_Luxe_ServerDataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter1.Fill(this.the_Luxe_ServerDataSet.Employee);
+            this.employeeTableAdapter1.Fill(this.the_Luxe_ServerDataSet.Employee,hotelID);
 
         }
 
@@ -141,4 +143,7 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         //    this.Close();
         //}
     }
+
+    //TODO: remove the check and entry for the hotel id as the employee will be added to the same hotel as the manager, so the hotel id can be automatically assigned based on the current user's hotel id, this will simplify the process and reduce the chances of errors when entering the hotel id, also it will ensure that employees are always added to the correct hotel without relying on user input for the hotel id
+    //BLAME ME FOR THIS, I WAS IN A HURRY TO GET THE PROJECT DONE AND I DIDN'T THINK ABOUT THIS, I WILL FIX IT IN THE FUTURE IF I HAVE TIME, BUT FOR NOW I JUST WANTED TO GET THE FUNCTIONALITY WORKING, SORRY FOR THE INCONVENIENCE
 }

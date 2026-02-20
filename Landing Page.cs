@@ -14,6 +14,8 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 {
     public partial class LandingPage : Form
     {
+
+        CurrentUser currentUser;
         public LandingPage()
         {
             InitializeComponent();
@@ -82,8 +84,8 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         private void mAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //link it to the Manage room page
-            Manage_Room j = new Manage_Room();
-            FormSetup(j);
+            Manage_Room roompage = new Manage_Room();
+            FormSetup(roompage);
         }
 
         private void rEPORTSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,20 +129,26 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 
         private void aDDEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddEmployee addEmployeePage = new AddEmployee();
+            AddEmployee addEmployeePage = new AddEmployee(currentUser);
             FormSetup(addEmployeePage);
         }
 
         private void rEMOVEEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RemoveEmployee removeEmployeePage = new RemoveEmployee();
+            RemoveEmployee removeEmployeePage = new RemoveEmployee(currentUser);
+            
             FormSetup(removeEmployeePage);
         }
 
         private void uPDATEEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UpdateEmployee updateEmployeePage = new UpdateEmployee();
+            UpdateEmployee updateEmployeePage = new UpdateEmployee(currentUser);
             FormSetup(updateEmployeePage);
+        }
+
+        public void currentUserDetails(CurrentUser currentUser)
+        {
+            this.currentUser = currentUser;
         }
     }
 }

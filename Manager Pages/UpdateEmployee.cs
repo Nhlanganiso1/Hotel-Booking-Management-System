@@ -12,9 +12,14 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 {
     public partial class UpdateEmployee : Form
     {
-        public UpdateEmployee()
+        public UpdateEmployee(CurrentUser currentUser)
         {
             InitializeComponent();
+        }
+
+        private void UpdateEmployee_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

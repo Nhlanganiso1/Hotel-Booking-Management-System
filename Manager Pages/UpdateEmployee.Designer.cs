@@ -40,6 +40,7 @@
             this.DoubleBuffered = true;
             this.Name = "UpdateEmployee";
             this.Text = "UpdateEmployee";
+            this.Load += new System.EventHandler(this.UpdateEmployee_Load);
             this.ResumeLayout(false);
 
         }

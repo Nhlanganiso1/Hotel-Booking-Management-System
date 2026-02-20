@@ -54,15 +54,21 @@ namespace Hotel_Booking_Management_System
                 MessageBox.Show("Incorrect login details, please try again.");
                 return;
             }
-            
-            
+
+            //Add details to the Current User class to be used throughout the application
+            CurrentUser currentUser = new CurrentUser();
+            currentUser.UserId = int.Parse(the_Luxe_ServerDataSet.Employee.Rows[0]["Employee_ID"].ToString());
+            currentUser.UserRole = the_Luxe_ServerDataSet.Employee.Rows[0]["Role"].ToString();
+            currentUser.UserName = the_Luxe_ServerDataSet.Employee.Rows[0]["Employee_name"].ToString() + " " + the_Luxe_ServerDataSet.Employee.Rows[0]["Employee_surname"].ToString();
+            currentUser.UserHotelId = int.Parse(the_Luxe_ServerDataSet.Employee.Rows[0]["Hotel_ID"].ToString());
 
             //Login successful, check the role of the user and pass it to the landing page to show the appropriate menu items based on the user and open the landing page
             // the role of the user is stored in the first row of the employee table, as the login query should only return one row if the login details are correct
             // first configure the menu strip for the role of the user, then show the landing page and hide the login form
-            String role = the_Luxe_ServerDataSet.Employee.Rows[0]["Role"].ToString();
+            
             LandingPage f1 = new LandingPage();
-            f1.ConfigureMenuStripForRole(role);
+            f1.ConfigureMenuStripForRole(currentUser.UserRole);
+            f1.currentUserDetails(currentUser);                   // pass the current user details to the landing page to be used throughout the application
             f1.Show();
             this.Hide();
             
@@ -71,7 +77,8 @@ namespace Hotel_Booking_Management_System
         private void LoginForm_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'the_Luxe_ServerDataSet.Employee' table. You can move, or remove it, as needed.
-            this.employeeTableAdapter.Fill(this.the_Luxe_ServerDataSet.Employee);
+            // this is a special fill method that is used to check the login details, it should not be removed as it is used in the login process, it is not used to fill the employee table for display purposes, so it does not need to be called in the landing page or any other page that displays employee details
+            this.employeeTableAdapter.FillForLogin(this.the_Luxe_ServerDataSet.Employee);
 
         }
       

@@ -3982,7 +3982,7 @@ namespace Hotel_Booking_Management_System.The_Luxe_ServerDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Employee] WHERE (([Employee_ID] = @Original_Employee_ID) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Employee_name = 1 AND [Employee_name] IS NULL) OR ([Employee_name] = @Original_Employee_name)) AND ((@IsNull_Employee_surname = 1 AND [Employee_surname] IS NULL) OR ([Employee_surname] = @Original_Employee_surname)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Employee] WHERE (([Employee_ID] = @Original_Employee_ID) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Employee_name = 1 AND [Employee_name] IS NULL) OR ([Employee_name] = @Original_Employee_name)) AND ((@IsNull_Employee_surname = 1 AND [Employee_surname] IS NULL) OR ([Employee_surname] = @Original_Employee_surname)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3998,7 +3998,7 @@ namespace Hotel_Booking_Management_System.The_Luxe_ServerDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Employee] ([Hotel_ID], [Employee_name], [Employee_surname], [Role], [Email], [Password]) VALUES (@Hotel_ID, @Employee_name, @Employee_surname, @Role, @Email, @Password);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Employee] ([Hotel_ID], [Employee_name], [Employee_surname], [Role], [Email], [Password]) VALUES (@Hotel_ID, @Employee_name, @Employee_surname, @Role, @Email, @Password);
 SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Password FROM Employee WHERE (Employee_ID = SCOPE_IDENTITY()) AND (Hotel_ID = @Hotel_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4009,7 +4009,7 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Employee] SET [Hotel_ID] = @Hotel_ID, [Employee_name] = @Employee_name, [Employee_surname] = @Employee_surname, [Role] = @Role, [Email] = @Email, [Password] = @Password WHERE (([Employee_ID] = @Original_Employee_ID) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Employee_name = 1 AND [Employee_name] IS NULL) OR ([Employee_name] = @Original_Employee_name)) AND ((@IsNull_Employee_surname = 1 AND [Employee_surname] IS NULL) OR ([Employee_surname] = @Original_Employee_surname)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Employee] SET [Hotel_ID] = @Hotel_ID, [Employee_name] = @Employee_name, [Employee_surname] = @Employee_surname, [Role] = @Role, [Email] = @Email, [Password] = @Password WHERE (([Employee_ID] = @Original_Employee_ID) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Employee_name = 1 AND [Employee_name] IS NULL) OR ([Employee_name] = @Original_Employee_name)) AND ((@IsNull_Employee_surname = 1 AND [Employee_surname] IS NULL) OR ([Employee_surname] = @Original_Employee_surname)) AND ((@IsNull_Role = 1 AND [Role] IS NULL) OR ([Role] = @Original_Role)) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)) AND ((@IsNull_Password = 1 AND [Password] IS NULL) OR ([Password] = @Original_Password)));
 SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Password FROM Employee WHERE (Employee_ID = @Employee_ID) AND (Hotel_ID = @Hotel_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hotel_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4043,12 +4043,13 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Passw" +
-                "ord FROM dbo.Employee";
+            this._commandCollection[0].CommandText = "SELECT        Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email" +
+                ", Password\r\nFROM            Employee\r\nWHERE        (Hotel_ID = @hotel_id)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotel_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "dbo.AddNewEmployee";
@@ -4062,25 +4063,38 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email" +
-                ", Password\r\nFROM            Employee\r\nWHERE        (Employee_ID = @employee_id) " +
-                "AND (Password = @pwd)";
+            this._commandCollection[2].CommandText = "SELECT Email, Employee_ID, Employee_name, Employee_surname, Hotel_ID, Password, R" +
+                "ole FROM Employee WHERE (Employee_ID = @employee_id) AND (Password = @pwd)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employee_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pwd", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT DISTINCT Role, Employee_ID, Hotel_ID, Employee_name, Employee_surname,  Em" +
-                "ail, Password FROM dbo.Employee";
+            this._commandCollection[3].CommandText = "SELECT Email, Employee_ID, Employee_name, Employee_surname, Hotel_ID, Password, R" +
+                "ole FROM Employee WHERE (Employee_name LIKE @name + \'%\') AND (Hotel_ID = @hotelI" +
+                "D)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotelID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT DISTINCT Role, Employee_ID, Hotel_ID, Employee_name, Employee_surname,  Em" +
+                "ail, Password FROM dbo.Employee";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT        Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email" +
+                ", Password\r\nFROM            Employee\r\n";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(The_Luxe_ServerDataSet.EmployeeDataTable dataTable) {
+        public virtual int Fill(The_Luxe_ServerDataSet.EmployeeDataTable dataTable, int hotel_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotel_id));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -4092,8 +4106,9 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual The_Luxe_ServerDataSet.EmployeeDataTable GetData() {
+        public virtual The_Luxe_ServerDataSet.EmployeeDataTable GetData(int hotel_id) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotel_id));
             The_Luxe_ServerDataSet.EmployeeDataTable dataTable = new The_Luxe_ServerDataSet.EmployeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4123,13 +4138,75 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByRole(The_Luxe_ServerDataSet.EmployeeDataTable dataTable) {
+        public virtual int FillByName(The_Luxe_ServerDataSet.EmployeeDataTable dataTable, string name, int hotelID) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(hotelID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual The_Luxe_ServerDataSet.EmployeeDataTable GetDataBy3(string name, int hotelID) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((name == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(name));
+            }
+            this.Adapter.SelectCommand.Parameters[1].Value = ((int)(hotelID));
+            The_Luxe_ServerDataSet.EmployeeDataTable dataTable = new The_Luxe_ServerDataSet.EmployeeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByRole(The_Luxe_ServerDataSet.EmployeeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillForLogin(The_Luxe_ServerDataSet.EmployeeDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual The_Luxe_ServerDataSet.EmployeeDataTable GetDataBy4() {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            The_Luxe_ServerDataSet.EmployeeDataTable dataTable = new The_Luxe_ServerDataSet.EmployeeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
