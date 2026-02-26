@@ -26,8 +26,8 @@ namespace Hotel_Booking_Management_System.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-258VVTB\\PRACTICESERVER;Initial Catalog=\"The Luxe Server\";Inte" +
-            "grated Security=True;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-1MU6IF8M\\SQLEXPRESS;Initial Catalog=\"The Luxe Server\";Integrat" +
+            "ed Security=True;Encrypt=True;TrustServerCertificate=True")]
         public string The_Luxe_ServerConnectionString {
             get {
                 return ((string)(this["The_Luxe_ServerConnectionString"]));

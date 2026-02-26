@@ -84,7 +84,7 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         private void mAToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //link it to the Manage room page
-            Manage_Room roompage = new Manage_Room();
+            Manage_Room roompage = new Manage_Room(currentUser);
             FormSetup(roompage);
         }
 
@@ -123,7 +123,7 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 
         private void cLEANINGToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CleanerPage cleanerPage = new CleanerPage();
+            CleanerPage cleanerPage = new CleanerPage(currentUser);
             FormSetup(cleanerPage);
         }
 
@@ -149,6 +149,11 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         public void currentUserDetails(CurrentUser currentUser)
         {
             this.currentUser = currentUser;
+        }
+
+        private void LandingPage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

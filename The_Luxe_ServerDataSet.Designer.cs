@@ -4043,7 +4043,7 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email" +
@@ -4091,6 +4091,20 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
             this._commandCollection[6].CommandText = "DELETE FROM Employee\r\nWHERE        (Employee_ID = @Original_Employee_ID)";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "UPDATE       Employee\r\nSET                Employee_name = @Employee_name, Employe" +
+                "e_surname = @Employee_surname, Role = @Role, Email = @Email, Password = @Passwor" +
+                "d\r\nWHERE        (Employee_ID = @Original_Employee_ID) AND (Hotel_ID = @Original_" +
+                "Hotel_ID); \r\n";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_surname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4527,6 +4541,61 @@ SELECT Employee_ID, Hotel_ID, Employee_name, Employee_surname, Role, Email, Pass
         public virtual int RemoveEmployee(int Original_Employee_ID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
             command.Parameters[0].Value = ((int)(Original_Employee_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateEmployee(string Employee_name, string Employee_surname, string Role, string Email, string Password, int Original_Employee_ID, int Original_Hotel_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
+            if ((Employee_name == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Employee_name));
+            }
+            if ((Employee_surname == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Employee_surname));
+            }
+            if ((Role == null)) {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[2].Value = ((string)(Role));
+            }
+            if ((Email == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(Email));
+            }
+            if ((Password == null)) {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[4].Value = ((string)(Password));
+            }
+            command.Parameters[5].Value = ((int)(Original_Employee_ID));
+            command.Parameters[6].Value = ((int)(Original_Hotel_ID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6573,7 +6642,7 @@ SELECT payment_ID, Check_in_date, Check_out_date, Hotel_ID, Room_ID, Client_ID, 
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Room] WHERE (([Room_number] = @Original_Room_number) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Type_of_room = 1 AND [Type_of_room] IS NULL) OR ([Type_of_room] = @Original_Type_of_room)) AND ((@IsNull_Room_status = 1 AND [Room_status] IS NULL) OR ([Room_status] = @Original_Room_status)) AND ((@IsNull_Room_cost_per_day = 1 AND [Room_cost_per_day] IS NULL) OR ([Room_cost_per_day] = @Original_Room_cost_per_day)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Room] WHERE (([Room_number] = @Original_Room_number) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Type_of_room = 1 AND [Type_of_room] IS NULL) OR ([Type_of_room] = @Original_Type_of_room)) AND ((@IsNull_Room_status = 1 AND [Room_status] IS NULL) OR ([Room_status] = @Original_Room_status)) AND ((@IsNull_Room_cost_per_day = 1 AND [Room_cost_per_day] IS NULL) OR ([Room_cost_per_day] = @Original_Room_cost_per_day)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Room_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6585,7 +6654,7 @@ SELECT payment_ID, Check_in_date, Check_out_date, Hotel_ID, Room_ID, Client_ID, 
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Room_cost_per_day", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Room_cost_per_day", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Room] ([Room_number], [Hotel_ID], [Type_of_room], [Room_status], [Room_cost_per_day]) VALUES (@Room_number, @Hotel_ID, @Type_of_room, @Room_status, @Room_cost_per_day);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Room] ([Room_number], [Hotel_ID], [Type_of_room], [Room_status], [Room_cost_per_day]) VALUES (@Room_number, @Hotel_ID, @Type_of_room, @Room_status, @Room_cost_per_day);
 SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM Room WHERE (Hotel_ID = @Hotel_ID) AND (Room_number = @Room_number)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6595,7 +6664,7 @@ SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room_cost_per_day", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 10, 2, "Room_cost_per_day", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Room] SET [Room_number] = @Room_number, [Hotel_ID] = @Hotel_ID, [Type_of_room] = @Type_of_room, [Room_status] = @Room_status, [Room_cost_per_day] = @Room_cost_per_day WHERE (([Room_number] = @Original_Room_number) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Type_of_room = 1 AND [Type_of_room] IS NULL) OR ([Type_of_room] = @Original_Type_of_room)) AND ((@IsNull_Room_status = 1 AND [Room_status] IS NULL) OR ([Room_status] = @Original_Room_status)) AND ((@IsNull_Room_cost_per_day = 1 AND [Room_cost_per_day] IS NULL) OR ([Room_cost_per_day] = @Original_Room_cost_per_day)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Room] SET [Room_number] = @Room_number, [Hotel_ID] = @Hotel_ID, [Type_of_room] = @Type_of_room, [Room_status] = @Room_status, [Room_cost_per_day] = @Room_cost_per_day WHERE (([Room_number] = @Original_Room_number) AND ([Hotel_ID] = @Original_Hotel_ID) AND ((@IsNull_Type_of_room = 1 AND [Type_of_room] IS NULL) OR ([Type_of_room] = @Original_Type_of_room)) AND ((@IsNull_Room_status = 1 AND [Room_status] IS NULL) OR ([Room_status] = @Original_Room_status)) AND ((@IsNull_Room_cost_per_day = 1 AND [Room_cost_per_day] IS NULL) OR ([Room_cost_per_day] = @Original_Room_cost_per_day)));
 SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM Room WHERE (Hotel_ID = @Hotel_ID) AND (Room_number = @Room_number)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room_number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Room_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6623,20 +6692,38 @@ SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM d" +
-                "bo.Room";
+            this._commandCollection[0].CommandText = "SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day\r\nFROM " +
+                "    Room\r\nWHERE  (Hotel_ID = @hotelID)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotelID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day\r\nFROM " +
+                "    Room\r\nWHERE  (Hotel_ID = @hotelID) AND (CAST(Room_number AS CHAR) LIKE @room" +
+                "No + \'%\')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@hotelID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@roomNo", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE Room\r\nSET          Room_status = @Room_status\r\nWHERE  (Room_number = @Orig" +
+                "inal_Room_number) AND (Hotel_ID = @Original_Hotel_ID)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Room_status", global::System.Data.SqlDbType.VarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Room_status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Room_number", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Room_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Hotel_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Hotel_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(The_Luxe_ServerDataSet.RoomDataTable dataTable) {
+        public virtual int Fill(The_Luxe_ServerDataSet.RoomDataTable dataTable, int hotelID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotelID));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -6648,8 +6735,47 @@ SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual The_Luxe_ServerDataSet.RoomDataTable GetData() {
+        public virtual The_Luxe_ServerDataSet.RoomDataTable GetData(int hotelID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotelID));
+            The_Luxe_ServerDataSet.RoomDataTable dataTable = new The_Luxe_ServerDataSet.RoomDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByRoomNo(The_Luxe_ServerDataSet.RoomDataTable dataTable, int hotelID, string roomNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotelID));
+            if ((roomNo == null)) {
+                throw new global::System.ArgumentNullException("roomNo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(roomNo));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual The_Luxe_ServerDataSet.RoomDataTable GetDataBy(int hotelID, string roomNo) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(hotelID));
+            if ((roomNo == null)) {
+                throw new global::System.ArgumentNullException("roomNo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(roomNo));
+            }
             The_Luxe_ServerDataSet.RoomDataTable dataTable = new The_Luxe_ServerDataSet.RoomDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6845,6 +6971,37 @@ SELECT Room_number, Hotel_ID, Type_of_room, Room_status, Room_cost_per_day FROM 
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Type_of_room, string Room_status, global::System.Nullable<decimal> Room_cost_per_day, int Original_Room_number, int Original_Hotel_ID, string Original_Type_of_room, string Original_Room_status, global::System.Nullable<decimal> Original_Room_cost_per_day) {
             return this.Update(Original_Room_number, Original_Hotel_ID, Type_of_room, Room_status, Room_cost_per_day, Original_Room_number, Original_Hotel_ID, Original_Type_of_room, Original_Room_status, Original_Room_cost_per_day);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "18.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateRoomStatus(string Room_status, int Original_Room_number, int Original_Hotel_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((Room_status == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Room_status));
+            }
+            command.Parameters[1].Value = ((int)(Original_Room_number));
+            command.Parameters[2].Value = ((int)(Original_Hotel_ID));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

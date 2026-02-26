@@ -12,8 +12,10 @@ namespace Hotel_Booking_Management_System.Cleaner_Pages
 {
     public partial class CleanerPage : Form
     {
-        public CleanerPage()
+        int hotel_ID;
+        public CleanerPage(CurrentUser currentUser)
         {
+            hotel_ID = currentUser.UserHotelId;
             InitializeComponent();
         }
     }
