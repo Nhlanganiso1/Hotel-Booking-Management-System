@@ -40,6 +40,11 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             employeeTableAdapter.FillByName(the_Luxe_ServerDataSet.Employee, textBox1.Text,HotelID);
         }
 
+        /// <summary>
+        /// Handles the Click event of the Clear button by clearing the text fields for name, surname, ID, and role.
+        /// </summary>
+        /// <param name="sender">The source of the event, typically the Clear button.</param>
+        /// <param name="e">An EventArgs object that contains the event data.</param>
         private void clearBTN_Click(object sender, EventArgs e)
         {
             nameTXB.Clear();
@@ -48,6 +53,13 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             roleTXB.Clear();
         }
 
+        /// <summary>
+        /// Handles the Click event of the Remove button to delete the selected employee from the data source.
+        /// </summary>
+        /// <remarks>Displays a confirmation message upon successful removal or prompts the user to select
+        /// an employee if none is selected.</remarks>
+        /// <param name="sender">The source of the event, typically the Remove button.</param>
+        /// <param name="e">An EventArgs object that contains the event data.</param>
         private void removeBTN_Click(object sender, EventArgs e)
         {
             if(employeeDGV.CurrentRow != null)
@@ -62,6 +74,16 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             }
         }
 
+        /// <summary>
+        /// Handles the event that occurs when a cell in the employee data grid view is double-clicked, populating the
+        /// corresponding text boxes with the selected employee's details.
+        /// </summary>
+        /// <remarks>This method is typically used to allow users to quickly load and edit employee
+        /// information by double-clicking a row in the data grid view. If no row is currently selected, the text boxes
+        /// are not updated.</remarks>
+        /// <param name="sender">The source of the event, typically the employee data grid view.</param>
+        /// <param name="e">A DataGridViewCellEventArgs that contains the event data, including the row and column indexes of the
+        /// double-clicked cell.</param>
         private void employeeDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (employeeDGV.CurrentRow != null)
