@@ -40,19 +40,6 @@ namespace Hotel_Booking_Management_System.Manager_Pages
             employeeTableAdapter.FillByName(the_Luxe_ServerDataSet.Employee, textBox1.Text,HotelID);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(employeeDGV.CurrentRow != null)
-            {
-                nameTXB.Text = employeeDGV.CurrentRow.Cells["Employee_name"].Value.ToString();
-                surnameTXB.Text = employeeDGV.CurrentRow.Cells["Employee_surname"].Value.ToString();
-                idTXB.Text = employeeDGV.CurrentRow.Cells["Employee_ID"].Value.ToString();
-                roleTXB.Text = employeeDGV.CurrentRow.Cells["Role"].Value.ToString();
-            }
-            
-
-        }
-
         private void clearBTN_Click(object sender, EventArgs e)
         {
             nameTXB.Clear();
@@ -65,11 +52,24 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         {
             if(employeeDGV.CurrentRow != null)
             {
-                employeeTableAdapter.RemoveEmployee(int.Parse(employeeDGV.CurrentRow.Cells["Employee_ID"].Value.ToString()));
+                employeeTableAdapter.RemoveEmployee(int.Parse(employeeDGV.CurrentRow.Cells[3].Value.ToString()));
+                this.employeeTableAdapter.Fill(this.the_Luxe_ServerDataSet.Employee, HotelID);
+                MessageBox.Show("Employee removed successfully.");
             }
             else
             {
                 MessageBox.Show("Please select an employee to remove.");
+            }
+        }
+
+        private void employeeDGV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (employeeDGV.CurrentRow != null)
+            {
+                nameTXB.Text = employeeDGV.CurrentRow.Cells[0].Value.ToString();
+                surnameTXB.Text = employeeDGV.CurrentRow.Cells[1].Value.ToString();
+                idTXB.Text = employeeDGV.CurrentRow.Cells[3].Value.ToString();
+                roleTXB.Text = employeeDGV.CurrentRow.Cells[2].Value.ToString();
             }
         }
     }

@@ -33,6 +33,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.employeeDGV = new System.Windows.Forms.DataGridView();
+            this.employeenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hotelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.the_Luxe_ServerDataSet = new Hotel_Booking_Management_System.The_Luxe_ServerDataSet();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.nameTXB = new System.Windows.Forms.TextBox();
@@ -44,14 +52,6 @@
             this.clearBTN = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.roleTXB = new System.Windows.Forms.TextBox();
-            this.employeenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeesurnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hotelIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.the_Luxe_ServerDataSet = new Hotel_Booking_Management_System.The_Luxe_ServerDataSet();
             this.employeeTableAdapter = new Hotel_Booking_Management_System.The_Luxe_ServerDataSetTableAdapters.EmployeeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.employeeDGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
@@ -89,6 +89,8 @@
             // 
             // employeeDGV
             // 
+            this.employeeDGV.AllowUserToAddRows = false;
+            this.employeeDGV.AllowUserToDeleteRows = false;
             this.employeeDGV.AutoGenerateColumns = false;
             this.employeeDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -101,9 +103,62 @@
             this.employeeDGV.DataSource = this.employeeBindingSource;
             this.employeeDGV.Location = new System.Drawing.Point(12, 151);
             this.employeeDGV.Name = "employeeDGV";
+            this.employeeDGV.ReadOnly = true;
             this.employeeDGV.Size = new System.Drawing.Size(645, 301);
             this.employeeDGV.TabIndex = 3;
-            this.employeeDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.employeeDGV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeDGV_CellDoubleClick);
+            // 
+            // employeenameDataGridViewTextBoxColumn
+            // 
+            this.employeenameDataGridViewTextBoxColumn.DataPropertyName = "Employee_name";
+            this.employeenameDataGridViewTextBoxColumn.HeaderText = "Employee_name";
+            this.employeenameDataGridViewTextBoxColumn.Name = "employeenameDataGridViewTextBoxColumn";
+            this.employeenameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeesurnameDataGridViewTextBoxColumn
+            // 
+            this.employeesurnameDataGridViewTextBoxColumn.DataPropertyName = "Employee_surname";
+            this.employeesurnameDataGridViewTextBoxColumn.HeaderText = "Employee_surname";
+            this.employeesurnameDataGridViewTextBoxColumn.Name = "employeesurnameDataGridViewTextBoxColumn";
+            this.employeesurnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeIDDataGridViewTextBoxColumn
+            // 
+            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "Employee_ID";
+            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "Employee_ID";
+            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
+            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hotelIDDataGridViewTextBoxColumn
+            // 
+            this.hotelIDDataGridViewTextBoxColumn.DataPropertyName = "Hotel_ID";
+            this.hotelIDDataGridViewTextBoxColumn.HeaderText = "Hotel_ID";
+            this.hotelIDDataGridViewTextBoxColumn.Name = "hotelIDDataGridViewTextBoxColumn";
+            this.hotelIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.the_Luxe_ServerDataSet;
+            // 
+            // the_Luxe_ServerDataSet
+            // 
+            this.the_Luxe_ServerDataSet.DataSetName = "The_Luxe_ServerDataSet";
+            this.the_Luxe_ServerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label3
             // 
@@ -202,53 +257,6 @@
             this.roleTXB.ReadOnly = true;
             this.roleTXB.Size = new System.Drawing.Size(208, 20);
             this.roleTXB.TabIndex = 14;
-            // 
-            // employeenameDataGridViewTextBoxColumn
-            // 
-            this.employeenameDataGridViewTextBoxColumn.DataPropertyName = "Employee_name";
-            this.employeenameDataGridViewTextBoxColumn.HeaderText = "Employee_name";
-            this.employeenameDataGridViewTextBoxColumn.Name = "employeenameDataGridViewTextBoxColumn";
-            // 
-            // employeesurnameDataGridViewTextBoxColumn
-            // 
-            this.employeesurnameDataGridViewTextBoxColumn.DataPropertyName = "Employee_surname";
-            this.employeesurnameDataGridViewTextBoxColumn.HeaderText = "Employee_surname";
-            this.employeesurnameDataGridViewTextBoxColumn.Name = "employeesurnameDataGridViewTextBoxColumn";
-            // 
-            // roleDataGridViewTextBoxColumn
-            // 
-            this.roleDataGridViewTextBoxColumn.DataPropertyName = "Role";
-            this.roleDataGridViewTextBoxColumn.HeaderText = "Role";
-            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
-            // 
-            // employeeIDDataGridViewTextBoxColumn
-            // 
-            this.employeeIDDataGridViewTextBoxColumn.DataPropertyName = "Employee_ID";
-            this.employeeIDDataGridViewTextBoxColumn.HeaderText = "Employee_ID";
-            this.employeeIDDataGridViewTextBoxColumn.Name = "employeeIDDataGridViewTextBoxColumn";
-            this.employeeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hotelIDDataGridViewTextBoxColumn
-            // 
-            this.hotelIDDataGridViewTextBoxColumn.DataPropertyName = "Hotel_ID";
-            this.hotelIDDataGridViewTextBoxColumn.HeaderText = "Hotel_ID";
-            this.hotelIDDataGridViewTextBoxColumn.Name = "hotelIDDataGridViewTextBoxColumn";
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.the_Luxe_ServerDataSet;
-            // 
-            // the_Luxe_ServerDataSet
-            // 
-            this.the_Luxe_ServerDataSet.DataSetName = "The_Luxe_ServerDataSet";
-            this.the_Luxe_ServerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // employeeTableAdapter
             // 
