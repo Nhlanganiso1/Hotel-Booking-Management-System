@@ -123,11 +123,23 @@
     <Compile Include="Receptionist Pages\CheckOut.Designer.cs">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Receptionist Pages\ManageClient.cs">
+    <Compile Include="Receptionist Pages\AddClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Receptionist Pages\ManageClient.Designer.cs">
-      <DependentUpon>ManageClient.cs</DependentUpon>
+    <Compile Include="Receptionist Pages\AddClient.Designer.cs">
+      <DependentUpon>AddClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist Pages\ModifyClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist Pages\ModifyClient.Designer.cs">
+      <DependentUpon>ModifyClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Receptionist Pages\RemoveClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Receptionist Pages\RemoveClient.Designer.cs">
+      <DependentUpon>RemoveClient.cs</DependentUpon>
     </Compile>
     <Compile Include="The_Luxe_ServerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -180,8 +192,8 @@
     <EmbeddedResource Include="Receptionist Pages\CheckOut.resx">
       <DependentUpon>CheckOut.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Receptionist Pages\ManageClient.resx">
-      <DependentUpon>ManageClient.cs</DependentUpon>
+    <EmbeddedResource Include="Receptionist Pages\AddClient.resx">
+      <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

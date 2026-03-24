@@ -42,6 +42,9 @@
             this.aDDEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEMOVEEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uPDATEEMPLOYEEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDRESIDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mODIFYRESIDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEMOVERESIDENTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,9 +84,13 @@
             // 
             // mANAGECLIENTDETAILSToolStripMenuItem
             // 
+            this.mANAGECLIENTDETAILSToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDRESIDENTToolStripMenuItem,
+            this.mODIFYRESIDENTToolStripMenuItem,
+            this.rEMOVERESIDENTToolStripMenuItem});
             this.mANAGECLIENTDETAILSToolStripMenuItem.Name = "mANAGECLIENTDETAILSToolStripMenuItem";
-            this.mANAGECLIENTDETAILSToolStripMenuItem.Size = new System.Drawing.Size(195, 24);
-            this.mANAGECLIENTDETAILSToolStripMenuItem.Text = "MANAGE CLIENT DETAILS";
+            this.mANAGECLIENTDETAILSToolStripMenuItem.Size = new System.Drawing.Size(219, 24);
+            this.mANAGECLIENTDETAILSToolStripMenuItem.Text = "MANAGE  RESIDENT DETAILS";
             this.mANAGECLIENTDETAILSToolStripMenuItem.Visible = false;
             this.mANAGECLIENTDETAILSToolStripMenuItem.Click += new System.EventHandler(this.mANAGECLIENTDETAILSToolStripMenuItem_Click);
             // 
@@ -165,6 +172,27 @@
             this.uPDATEEMPLOYEEToolStripMenuItem.Text = "UPDATE EMPLOYEE";
             this.uPDATEEMPLOYEEToolStripMenuItem.Click += new System.EventHandler(this.uPDATEEMPLOYEEToolStripMenuItem_Click);
             // 
+            // aDDRESIDENTToolStripMenuItem
+            // 
+            this.aDDRESIDENTToolStripMenuItem.Name = "aDDRESIDENTToolStripMenuItem";
+            this.aDDRESIDENTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aDDRESIDENTToolStripMenuItem.Text = "ADD RESIDENT";
+            this.aDDRESIDENTToolStripMenuItem.Click += new System.EventHandler(this.aDDRESIDENTToolStripMenuItem_Click);
+            // 
+            // mODIFYRESIDENTToolStripMenuItem
+            // 
+            this.mODIFYRESIDENTToolStripMenuItem.Name = "mODIFYRESIDENTToolStripMenuItem";
+            this.mODIFYRESIDENTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.mODIFYRESIDENTToolStripMenuItem.Text = "MODIFY RESIDENT";
+            this.mODIFYRESIDENTToolStripMenuItem.Click += new System.EventHandler(this.mODIFYRESIDENTToolStripMenuItem_Click);
+            // 
+            // rEMOVERESIDENTToolStripMenuItem
+            // 
+            this.rEMOVERESIDENTToolStripMenuItem.Name = "rEMOVERESIDENTToolStripMenuItem";
+            this.rEMOVERESIDENTToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.rEMOVERESIDENTToolStripMenuItem.Text = "REMOVE RESIDENT";
+            this.rEMOVERESIDENTToolStripMenuItem.Click += new System.EventHandler(this.rEMOVERESIDENTToolStripMenuItem_Click);
+            // 
             // LandingPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -176,7 +204,7 @@
             this.DoubleBuffered = true;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "LandingPage";
             this.Text = "THE LUXE RESIDENCES";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -204,5 +232,8 @@
         private System.Windows.Forms.ToolStripMenuItem aDDEMPLOYEEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rEMOVEEMPLOYEEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem uPDATEEMPLOYEEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDDRESIDENTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mODIFYRESIDENTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEMOVERESIDENTToolStripMenuItem;
     }
 }

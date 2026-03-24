@@ -103,8 +103,7 @@ namespace Hotel_Booking_Management_System.Manager_Pages
 
         private void mANAGECLIENTDETAILSToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ManageClient clientPage = new ManageClient();
-            FormSetup (clientPage);
+            
         }
 
         private void BOOKINGSToolStripMenuItem_Click(object sender, EventArgs e)
@@ -154,6 +153,24 @@ namespace Hotel_Booking_Management_System.Manager_Pages
         private void LandingPage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void aDDRESIDENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddClient addClient = new AddClient();
+            FormSetup(addClient);
+        }
+
+        private void mODIFYRESIDENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ModifyClient modifyClient = new ModifyClient();
+            FormSetup(modifyClient);
+        }
+
+        private void rEMOVERESIDENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveClient removeClient = new RemoveClient();
+            FormSetup (removeClient);
         }
     }
 }

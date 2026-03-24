@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Hotel_Booking_Management_System.Receptionist_Pages
 {
-    public partial class ManageClient : Form
+    public partial class AddClient : Form
     {
-        public ManageClient()
+        public AddClient()
         {
             InitializeComponent();
         }
