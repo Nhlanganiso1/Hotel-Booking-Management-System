@@ -195,6 +195,9 @@
     <EmbeddedResource Include="Receptionist Pages\AddClient.resx">
       <DependentUpon>AddClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Receptionist Pages\ModifyClient.resx">
+      <DependentUpon>ModifyClient.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

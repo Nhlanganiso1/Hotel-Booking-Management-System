@@ -9,7 +9,7 @@
     <Shape ID="DesignTable:Employee" ZOrder="12" X="345" Y="70" Height="411" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:Hotel" ZOrder="11" X="70" Y="70" Height="296" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
     <Shape ID="DesignTable:Booking" ZOrder="10" X="345" Y="482" Height="227" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
-    <Shape ID="DesignTable:Client" ZOrder="1" X="641" Y="482" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:Client" ZOrder="1" X="641" Y="482" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
     <Shape ID="DesignTable:Payment" ZOrder="9" X="345" Y="779" Height="250" Width="229" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:Room" ZOrder="8" X="345" Y="1099" Height="250" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
   </Shapes>
@@ -58,7 +58,7 @@
       <RoutePoints>
         <Point>
           <X>658</X>
-          <Y>755</Y>
+          <Y>778</Y>
         </Point>
         <Point>
           <X>658</X>

@@ -37,6 +37,9 @@
             this.emailTXB = new System.Windows.Forms.TextBox();
             this.addResidentBTN = new System.Windows.Forms.Button();
             this.clearBTN = new System.Windows.Forms.Button();
+            this.clientTableAdapter2 = new Hotel_Booking_Management_System.The_Luxe_ServerDataSetTableAdapters.ClientTableAdapter();
+            this.the_Luxe_ServerDataSet1 = new Hotel_Booking_Management_System.The_Luxe_ServerDataSet();
+            ((System.ComponentModel.ISupportInitialize)(this.the_Luxe_ServerDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +121,15 @@
             this.clearBTN.UseVisualStyleBackColor = true;
             this.clearBTN.Click += new System.EventHandler(this.clearBTN_Click);
             // 
+            // clientTableAdapter2
+            // 
+            this.clientTableAdapter2.ClearBeforeFill = true;
+            // 
+            // the_Luxe_ServerDataSet1
+            // 
+            this.the_Luxe_ServerDataSet1.DataSetName = "The_Luxe_ServerDataSet";
+            this.the_Luxe_ServerDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // AddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,6 +151,7 @@
             this.Name = "AddClient";
             this.Text = "AddClient";
             this.Load += new System.EventHandler(this.AddClient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.the_Luxe_ServerDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,8 +168,10 @@
         private System.Windows.Forms.TextBox emailTXB;
         private System.Windows.Forms.Button addResidentBTN;
         private System.Windows.Forms.Button clearBTN;
-        private The_Luxe_ServerDataSet the_Luxe_ServerDataSet;
-        private The_Luxe_ServerDataSetTableAdapters.ClientTableAdapter clientTableAdapter1;
+        
+        
         private The_Luxe_ServerDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private The_Luxe_ServerDataSetTableAdapters.ClientTableAdapter clientTableAdapter2;
+        private The_Luxe_ServerDataSet the_Luxe_ServerDataSet1;
     }
 }

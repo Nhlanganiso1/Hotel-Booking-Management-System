@@ -23,7 +23,7 @@ namespace Hotel_Booking_Management_System.Receptionist_Pages
         private void AddClient_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'the_Luxe_ServerDataSet.Client' table. You can move, or remove it, as needed.
-            this.clientTableAdapter1.Fill(this.the_Luxe_ServerDataSet.Client);
+            this.clientTableAdapter2.Fill(this.the_Luxe_ServerDataSet1.Client);
 
         }
 
@@ -31,7 +31,7 @@ namespace Hotel_Booking_Management_System.Receptionist_Pages
         {
             if(validateResidentDetails())
             {
-                int existingResidentEmails = clientTableAdapter1.CheckEmailAddress(this.the_Luxe_ServerDataSet.Client, emailTXB.Text);
+                int existingResidentEmails = clientTableAdapter2.CheckEmailAddress(this.the_Luxe_ServerDataSet1.Client, emailTXB.Text);
 
                 if (existingResidentEmails > 0)
                 {
@@ -39,7 +39,7 @@ namespace Hotel_Booking_Management_System.Receptionist_Pages
                 }
                 else
                 {
-                    clientTableAdapter1.InsertNewClient(nameTXB.Text, surnameTXB.Text, emailTXB.Text);
+                    clientTableAdapter2.InsertNewClient(nameTXB.Text, surnameTXB.Text, emailTXB.Text);
                     MessageBox.Show("Resident added successfully.");
                     nameTXB.Clear();
                     surnameTXB.Clear();
